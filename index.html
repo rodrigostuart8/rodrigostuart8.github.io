@@ -1,0 +1,154 @@
+
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ink Stuart</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: sans-serif;
+      background-color: #111;
+      color: #eee;
+    }
+    header {
+      text-align: center;
+      padding: 20px;
+    }
+    header img {
+      max-width: 300px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 16px;
+      padding: 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    .grid-item {
+      cursor: pointer;
+      border: 1px solid #444;
+      transition: transform 0.2s;
+    }
+    .grid-item:hover {
+      transform: scale(1.05);
+    }
+    .grid-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+    h2 {
+      text-align: center;
+      padding-top: 40px;
+    }
+    .section {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      border-top: 1px solid #333;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    input, textarea {
+      padding: 10px;
+      background: #222;
+      border: 1px solid #555;
+      color: #fff;
+    }
+    button {
+      padding: 10px;
+      background: #fff;
+      color: #000;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.jpeg" alt="Ink Stuart logo" />
+  </header>
+
+  <section class="grid">
+    <div class="grid-item" onclick="location.href='#realismo'">
+      <img src="demo-realismo.jpg" alt="Realismo" />
+    </div>
+    <div class="grid-item" onclick="location.href='#retratos'">
+      <img src="demo-retratos.jpg" alt="Retratos" />
+    </div>
+    <div class="grid-item" onclick="location.href='#lettering'">
+      <img src="demo-lettering.jpg" alt="Lettering" />
+    </div>
+    <div class="grid-item" onclick="location.href='#fineline'">
+      <img src="demo-fineline.jpg" alt="Fineline" />
+    </div>
+    <div class="grid-item" onclick="location.href='#cicatrizadas'">
+      <img src="demo-cicatrizadas.jpg" alt="Cicatrizadas" />
+    </div>
+    <div class="grid-item" onclick="location.href='#detalhes'">
+      <img src="demo-detalhes.jpg" alt="Pequenos detalhes" />
+    </div>
+  </section>
+
+  <section class="section" id="realismo">
+    <h2>Realismo</h2>
+    <p>Galeria de tatuagens em estilo realista.</p>
+  </section>
+
+  <section class="section" id="retratos">
+    <h2>Retratos</h2>
+    <p>Galeria de retratos tatuados.</p>
+  </section>
+
+  <section class="section" id="lettering">
+    <h2>Lettering</h2>
+    <p>Galeria de tatuagens com escrita personalizada.</p>
+  </section>
+
+  <section class="section" id="fineline">
+    <h2>Fineline / Outras</h2>
+    <p>Galeria de trabalhos fineline e estilos diversos.</p>
+  </section>
+
+  <section class="section" id="cicatrizadas">
+    <h2>Cicatrizadas</h2>
+    <p>Galeria de tatuagens cicatrizadas.</p>
+  </section>
+
+  <section class="section" id="detalhes">
+    <h2>Pequenos Detalhes</h2>
+    <p>Galeria de pequenos pormenores e detalhes.</p>
+  </section>
+
+  <section class="section" id="sobre">
+    <h2>Sobre</h2>
+    <p>Breve descrição tua + <em>foto tua a tatuar</em> (adicionas depois).</p>
+  </section>
+
+  <section class="section" id="contacto">
+    <h2>Contacto e Orçamento</h2>
+    <form action="https://formsubmit.co/rodrigostuart8@gmail.com" method="POST">
+      <input type="text" name="nome" placeholder="Nome" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <textarea name="mensagem" placeholder="Descrição da tatuagem" rows="5"></textarea>
+      <input type="text" name="estilo" placeholder="Estilo pretendido" />
+      <button type="submit">Enviar pedido</button>
+    </form>
+    <p>Instagram: <a href="https://instagram.com/ink.stuart" target="_blank">@ink.stuart</a></p>
+  </section>
+
+  <footer>
+    &copy; 2025 Ink Stuart. Todos os direitos reservados.
+  </footer>
+</body>
+</html>
