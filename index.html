@@ -127,6 +127,63 @@
   color: #000000;
 }
 
+.sobre-section {
+  padding: 80px 20px;
+  background-color: #000000;
+  color: #fff;
+}
+.sobre-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 60px;
+  max-width: 1200px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+.sobre-imagem img {
+  max-width: 400px;
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+}
+.sobre-texto {
+  flex: 1;
+  min-width: 280px;
+  max-width: 600px;
+}
+.sobre-texto h2 {
+  font-size: 32px;
+  margin-bottom: 20px;
+}
+
+.sobre-texto p {
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.sobre-texto h3 {
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+.sobre-texto ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
+
+.sobre-texto ul li {
+  margin-bottom: 10px;
+}
+
+/* Separador elegante entre secções */
+.separador {
+  height: 2px;
+  width: 80%;
+  margin: 60px auto;
+  background: linear-gradient(to right, transparent, #555, transparent);
+  border-radius: 2px;
+}
 
 /* Espaço no topo do conteúdo para não ser tapado pela topbar */
 body {
@@ -210,29 +267,38 @@ body {
     }
   }
 </style>
-  <section class="section" id="sobre">
-  <h2>Sobre</h2>
-  <p>Sou um tatuador nascido em 1997, atualmente trabalho no centro de Viana do Castelo em um estúdio privado apenas por marcação. Com experiência de vários anos, alguns cursos e Workshops (abaixo identificados), passei por uma fase de consolidação e especialização em realismo Black & Grey.</p>
+  
+<div class="separador"></div>
+  
+  <section class="section sobre-section" id="sobre">
+  <div class="sobre-container">
+    <div class="sobre-imagem">
+      <img src="tatuar.jpg" alt="Rodrigo a tatuar">
+    </div>
+    <div class="sobre-texto">
+      <h2>Sobre</h2>
+      <p>
+        Sou um tatuador nascido em 1997, atualmente trabalho no centro de Viana do Castelo num estúdio privado apenas por marcação.
+        Com experiência de vários anos, alguns cursos e workshops (listados abaixo), passei por uma fase de consolidação e especialização em realismo Black & Grey.
+      </p>
 
-  <div style="text-align: center; margin-top: 20px;">
-    <img src="tatuar.jpg" alt="Tatuar" style="max-width: 100%; width: 500px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.4);">
-  </div>
-
-  <h3 style="margin-top: 30px;">Cursos e Workshops</h3>
-  <ul>
-    <li>Workshop de Realismo Black & Grey com [Nome do artista]</li>
-    <li>Curso de Higiene e Segurança no Trabalho com Tatuagem</li>
-    <li>Masterclass de Sombreamento e Técnicas de Textura</li>
-    <li>Formação Avançada de Composição e Proporção Facial</li>
-    <!-- Adiciona mais se quiseres -->
-  </ul>
+      <h3>Cursos e Workshops:</h3>
+      <ul>
+        <li>Workshop de Realismo com [Nome do Artista]</li>
+        <li>Curso Avançado de Sombreamento e Texturas</li>
+        <li>Formação Higiene e Segurança no Trabalho em Estúdios de Tatuagem</li>
+        <li>Workshop de Lettering Moderno</li>
+      </ul>
 
     <p>Fiz também outros trabalhos com lettering sem ser tatuagem como o Lettering oficial do videoclipe ' Tu não deixes - Tuka 258 '</p>
     
     <img src="tunaodeixes.jpg" alt="Videoclipe" style="max-width: 100%; width: 500px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.4);">
-
+    </div>
+  </div>
 </section>
-
+  
+<div class="separador"></div>
+  
   <section class="section" id="realismo">
     <h2>Retratos</h2>
      <div class="gallery">
@@ -264,7 +330,9 @@ body {
   }
 </style>
   </section>
-
+  
+<div class="separador"></div>
+  
   <section class="section" id="retratos">
     <h2>Realismo</h2>
      <div class="gallery">
@@ -296,7 +364,9 @@ body {
   }
 </style>
   </section>
-
+  
+<div class="separador"></div>
+  
   <section class="section" id="lettering">
     <h2>Lettering</h2>
      <div class="gallery">
@@ -305,7 +375,9 @@ body {
     <img src="portfolio/lettering3.jpeg" alt="Tatuagem Lettering 3">
   </div>
   </section>
-
+  
+<div class="separador"></div>
+  
   <section class="section" id="fineline">
     <h2>Fineline / Outras</h2>
      <div class="gallery">
@@ -316,7 +388,9 @@ body {
     <!-- mais imagens -->
   </div>
   </section>
-
+  
+<div class="separador"></div>
+  
   <section class="section" id="cicatrizadas">
     <h2>Cicatrizadas</h2>
     <div class="gallery">
@@ -324,7 +398,9 @@ body {
     <img src="portfolio/cicatrizada2.jpeg" alt="Tatuagem Cicatrizada 2">
   </div>
   </section>
-
+  
+<div class="separador"></div>
+  
   <section class="section" id="detalhes">
     <h2>Pequenos Detalhes</h2>
      <div class="gallery">
@@ -336,7 +412,9 @@ body {
     <img src="portfolio/detalhes6.jpeg" alt="Detalhe 6">
   </div>
   </section>
-
+  
+<div class="separador"></div>
+  
   <section class="section" id="contacto">
     <h2>Contacto e Orçamento</h2>
     <form action="https://formsubmit.co/rodrigostuart8@gmail.com" method="POST">
@@ -348,7 +426,9 @@ body {
     </form>
     <p>Instagram: <a href="https://instagram.com/ink.stuart" target="_blank">@ink.stuart</a></p>
   </section>
-
+  
+<div class="separador"></div>
+  
   <footer>
     &copy; 2025 Ink Stuart. Todos os direitos reservados.
   </footer>
