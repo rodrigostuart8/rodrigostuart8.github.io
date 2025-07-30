@@ -79,9 +79,92 @@
 </head>
 <body>
   <header>
+  <div class="logo">
     <img src="logo1.jpeg" alt="Ink Stuart logo" />
-  </header>
+  </div>
+  <nav class="nav-links">
+    <div class="nav-item">
+      <a href="#realismo">Realismo</a>
+      <p>Retratos em preto e cinza, muito detalhado.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#retratos">Retratos</a>
+      <p>Tatuagens com foco em expressões humanas.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#lettering">Lettering</a>
+      <p>Tipografias personalizadas para tatuagens.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#fineline">Fineline / Outras</a>
+      <p>Traços finos e minimalistas.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#cicatrizadas">Cicatrizadas</a>
+      <p>Tatuagens que simulam cicatrizes reais.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#detalhes">Pequenos Detalhes</a>
+      <p>Designs pequenos com muito cuidado.</p>
+    </div>
+  </nav>
+</header>
 
+<style>
+  header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 40px;
+    background-color: #000; /* mantém fundo preto */
+  }
+  .logo img {
+    max-height: 50px;
+    width: auto;
+  }
+  .nav-links {
+    display: flex;
+    gap: 30px;
+  }
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    font-family: 'MinhaFonte', sans-serif;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  .nav-item a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+  }
+  .nav-item p {
+    margin: 4px 0 0 0;
+    font-size: 11px;
+    color: #bbb;
+    max-width: 120px;
+    text-align: center;
+  }
+  .nav-item a:hover {
+    color: #f0a500; /* um destaque laranja, por exemplo */
+  }
+
+  /* Responsivo básico */
+  @media (max-width: 800px) {
+    header {
+      flex-direction: column;
+      gap: 10px;
+      padding: 10px 20px;
+    }
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+  }
+</style>
   <section class="grid">
     <div class="grid-item" onclick="location.href='#realismo'">
       <img src="portfolio/retratos4.jpeg" alt="Retratos" />
