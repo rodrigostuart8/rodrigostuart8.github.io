@@ -126,11 +126,7 @@
 .nav-links a:hover {
   color: #000000;
 }
-.sticky-wrapper {
-  position: relative;
-  flex: 0 0 400px;
-  height: 100vh; /* garante que a imagem tem espaço suficiente para centralizar */
-}
+
 .sobre-section {
   padding: 80px 20px;
   background-color: #000000;
@@ -151,6 +147,7 @@
   top: 50%;
   transform: translateY(-50%);
   height: fit-content;
+  align-self: flex-start;
 }
 .sobre-imagem img {
   width: 100%;
@@ -306,10 +303,9 @@ body {
   
   <section class="section sobre-section" id="sobre">
   <div class="sobre-container">
-    <div class="sticky-wrapper">
-        <div class="sobre-imagem">
-          <img src="tatuar1.jpg" alt="Rodrigo a tatuar">
-        </div>
+    <div class="sobre-imagem">
+      <img src="tatuar1.jpg" alt="Rodrigo a tatuar">
+    </div>
     <div class="sobre-texto">
       <h2>Sobre</h2>
       <p>
