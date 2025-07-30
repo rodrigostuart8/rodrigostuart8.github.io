@@ -1,83 +1,37 @@
 
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ink Stuart</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-     @font-face {
-      font-family: 'MinhaFonte';
-      src: url('FLOWRISE.ttf') format('truetype');
-    }
-    body {
-      margin: 0;
-      background-color: #000000;
-      color: #ffffff;
-    }
-    header {
-      text-align: center;
-      padding: 20px;
-    }
-    header img {
-      max-width: 300px;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-      padding: 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .grid-item {
-      cursor: pointer;
-      border: 1px solid #444;
-      transition: transform 0.2s;
-    }
-    .grid-item:hover {
-      transform: scale(1.05);
-    }
-    .grid-item img {
-      width: 100%;
-      height: 150px;
-      object-fit: cover;
-    }
-    h2 {
-      text-align: center;
-      padding-top: 40px;
-    }
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      border-top: 1px solid #333;
-    }
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-    input, textarea {
-      padding: 10px;
-      background: #222;
-      border: 1px solid #555;
-      color: #fff;
-    }
-    button {
-      padding: 10px;
-      background: #fff;
-      color: #000;
-      border: none;
-      cursor: pointer;
-    }
-  </style>
-</head>
+<header>
+  <div class="logo">
+    <img src="logo1.jpeg" alt="Ink Stuart logo" />
+  </div>
+  <nav class="nav-links">
+    <div class="nav-item">
+      <a href="#realismo">Realismo</a>
+      <p>Retratos em preto e cinza, muito detalhado.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#retratos">Retratos</a>
+      <p>Tatuagens com foco em expressões humanas.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#lettering">Lettering</a>
+      <p>Tipografias personalizadas para tatuagens.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#fineline">Fineline / Outras</a>
+      <p>Traços finos e minimalistas.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#cicatrizadas">Cicatrizadas</a>
+      <p>Tatuagens que simulam cicatrizes reais.</p>
+    </div>
+    <div class="nav-item">
+      <a href="#detalhes">Pequenos Detalhes</a>
+      <p>Designs pequenos com muito cuidado.</p>
+    </div>
+  </nav>
+</header>
 <body>
   <header>
     <img src="logo1.jpeg" alt="Ink Stuart logo" />
