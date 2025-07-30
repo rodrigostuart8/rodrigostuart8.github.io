@@ -134,26 +134,32 @@
 }
 .sobre-container {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: flex-start;
   gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: wrap;
+  flex-wrap: nowrap;
+}
+.sobre-imagem {
+  flex: 0 0 400px; 
 }
 .sobre-imagem img {
-  max-width: 400px;
   width: 100%;
+  height: auto;
   border-radius: 12px;
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+  display: block;
+  margin: 0; 
 }
+
+.sobre-texto {
+  flex: 1;
+  max-width: 600px;
+}    
 .sobre-texto h2 {
   font-size: 32px;
   margin: 0 0 20px 0; 
-}
-.sobre-texto h2 {
-  font-size: 32px;
-  margin-bottom: 20px;
 }
 
 .sobre-texto p {
