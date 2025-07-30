@@ -150,10 +150,15 @@
 .sobre-imagem {
   flex: 0 0 400px; 
   position: sticky;
-  top: 50%;
-  transform: translateY(-50%);
-  height: fit-content;
-  
+  top: 100px;
+  height: fit-content;  
+}
+@media (max-width: 768px) {
+  .sobre-imagem {
+    position: static;
+    top: auto;
+    transform: none;
+  }
 }
 .sobre-imagem img {
   width: 100%;
