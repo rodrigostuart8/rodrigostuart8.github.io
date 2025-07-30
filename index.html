@@ -86,21 +86,26 @@ i<!DOCTYPE html>
     .topbar {
   position: fixed;
   top: 0;
+  left: 0;
   width: 100%;
   height: 80px;
   background-color: #111;
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center; /* Centro horizontal para os links */
   padding: 0 20px;
   box-sizing: border-box;
   z-index: 1000;
   border-bottom: 1px solid #333;
 }
+}
 
 
 .logo-container {
-  margin-right: auto;
+  position: absolute;
+  left: 20px;
+  display: flex;
+  align-items: center;
 }
   
 /* Logo */
@@ -108,11 +113,7 @@ i<!DOCTYPE html>
   height: 50px;
   object-fit: contain;
 }
-
 .nav-links {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
   display: flex;
   gap: 24px;
   align-items: center;
@@ -127,6 +128,8 @@ i<!DOCTYPE html>
   color: #ccc;
 }
 
+
+
 /* Espaço no topo do conteúdo para não ser tapado pela topbar */
 body {
   margin: 0;
@@ -139,18 +142,17 @@ body {
 </head>
 <body>
   <header class="topbar">
-  <div class="topbar-container">
-    <div class="logo-container">
-      <img src="logo2.jpeg" alt="Ink Stuart Logo" class="logo">
-    </div>
-    <nav class="nav-links">
-      <a href="#retratos">Realismo</a>
-      <a href="#realismo">Retratos</a>
-      <a href="#lettering">Lettering</a>
-      <a href="#fineline">Fineline/Outras</a>
-      <a href="#cicatrizadas">Cicatrizadas</a>
-      <a href="#detalhes">Pequenos detalhes</a>
-      <a href="#sobre">Sobre</a>
+  <div class="logo-container">
+    <img src="logo2.jpeg" alt="Ink Stuart Logo" class="logo">
+  </div>
+  <nav class="nav-links">
+    <a href="#realismo">Retratos</a>
+    <a href="#retratos">Realismo</a>
+    <a href="#lettering">Lettering</a>
+    <a href="#fineline">Fineline/Outras</a>
+    <a href="#cicatrizadas">Cicatrizadas</a>
+    <a href="#detalhes">Pequenos detalhes</a>
+    <a href="#sobre">Sobre</a>
     </nav>
   </div>
 </header>
