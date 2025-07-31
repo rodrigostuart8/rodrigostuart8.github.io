@@ -139,29 +139,21 @@
   gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 100px 20px 200px;
-  padding-bottom: 200px;
+  flex-wrap: nowrap;
+  min-height: 120vh; /* importante: altura mínima da secção */
 }
   .sticky-wrapper {
+  position: relative;
   flex: 0 0 400px;
+  height: 100vh; /* espaço reservado para o sticky */
 }
 .sobre-imagem {
   flex: 0 0 400px; 
   position: sticky;
-  top: 100px;
-  height: auto;  
-  display: block;
-  max-width: 100%;
+  top: calc(50vh - 200px);
+  height: fit-content;  
 }
 @media (max-width: 768px) {
-    .sobre-container {
-    flex-direction: column;
-  }
-
-  .sticky-wrapper {
-    flex: 1 1 auto;
-  }
-
   .sobre-imagem {
     position: static;
     top: auto;
@@ -179,9 +171,8 @@
 
 .sobre-texto {
   flex: 1;
-  font-size: 1rem;
-  line-height: 1.6;
-}  
+  max-width: 600px;
+}    
 .sobre-texto h2 {
   font-size: 32px;
   margin: 0 0 20px 0; 
@@ -323,9 +314,12 @@ body {
   
  <section class="section sobre-section" id="sobre">
   <div class="sobre-container">
+    
     <div class="sticky-wrapper">
-        <img src="tatuar1.jpg" alt="Rodrigo a tatuar" class="sobre-imagem">
+      <div class="sobre-imagem">
+        <img src="tatuar1.jpg" alt="Rodrigo a tatuar">
       </div>
+    </div>
 
     <div class="sobre-texto">
       <h2>Sobre</h2>
