@@ -139,20 +139,18 @@
   gap: 60px;
   max-width: 1200px;
   margin: 0 auto;
-  flex-wrap: nowrap;
-  min-height: 160vh; /* importante: altura mínima da secção */
+  /*colar aqui*/
   padding-bottom: 200px;
 }
   .sticky-wrapper {
-  position: relative;
   flex: 0 0 400px;
-  margin-bottom: 500px;
 }
 .sobre-imagem {
   flex: 0 0 400px; 
   position: sticky;
-  top: calc(50vh - 200px);
-  height: fit-content;  
+  top: 100px;
+  height: auto;  
+  display: block;
 }
 @media (max-width: 768px) {
     .sobre-container {
@@ -323,10 +321,8 @@ body {
   
  <section class="section sobre-section" id="sobre">
   <div class="sobre-container">
-    
     <div class="sticky-wrapper">
-      <div class="sobre-imagem">
-        <img src="tatuar1.jpg" alt="Rodrigo a tatuar">
+        <img src="tatuar1.jpg" alt="Rodrigo a tatuar" class="sobre-imagem">
       </div>
     </div>
 
