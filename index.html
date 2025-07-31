@@ -145,13 +145,15 @@
   .sticky-wrapper {
   position: relative;
   flex: 0 0 400px;
-  height: 100vh; /* espaço reservado para o sticky */
+  align-self: stretch;
 }
 .sobre-imagem {
   flex: 0 0 400px; 
   position: sticky;
-  top: calc(50vh - 200px);
-  height: fit-content;  
+  top: 100px;
+  height: fit-content;
+  display: block;
+  max-width: 100%
 }
 @media (max-width: 768px) {
   .sobre-imagem {
