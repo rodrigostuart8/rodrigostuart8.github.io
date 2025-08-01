@@ -6,7 +6,9 @@
   <title>Ink Stuart</title>
   <link rel="stylesheet" href="style.css">
   <style>
-     @font-face {
+    /* Mantive teu CSS original até a seção Sobre */
+
+    @font-face {
       font-family: 'MinhaFonte';
       src: url('FLOWRISE.ttf') format('truetype');
     }
@@ -14,6 +16,8 @@
       margin: 0;
       background-color: #fefaf6;
       color: #1a1a1a;
+      font-family: sans-serif;
+      padding-top: 100px; /* para não ficar atrás do topbar */
     }
     header {
       text-align: center;
@@ -22,41 +26,185 @@
     header img {
       max-width: 300px;
     }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-      gap: 16px;
-      padding: 20px;
+    .topbar {
+      position: fixed;
+      top: 0;
+      left: 0;
       width: 100%;
-      margin: auto;
+      height: 80px;
+      background-color: #fdf6ee;
+      border-bottom: 1px solid #333;
+      z-index: 10000;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 40px;
     }
-    .grid-item {
+    .logo-container {
+      position: relative;
+    }
+    .logo {
+      height: 50px;
+      object-fit: contain;
+    }
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      font-size: 15px;
+      transition: 0.3s ease;
       cursor: pointer;
-      border: 1px solid #444;
-      transition: transform 0.2s;
     }
-    .grid-item:hover {
-      transform: scale(1.05);
+    .nav-links a:hover {
+      color: #f0a500;
     }
-    .grid-item img {
+    /* Estilos seccion Sobre (mantive igual) */
+    .sobre-section {
+      padding: 80px 20px;
+      background-color: #fefaf6;
+      color: #1a1a1a;
+      max-width: 1600px;
+      margin: 0 auto 60px auto;
+    }
+    .sobre-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 60px;
+      flex-wrap: nowrap;
+      min-height: 120vh;
+    }
+    .sticky-wrapper {
+      position: relative;
+      flex: 0 0 400px;
+      align-self: stretch;
+    }
+    .sobre-imagem {
+      flex: 0 0 400px; 
+      position: sticky;
+      top: 200px;
+      height: fit-content;
+      display: block;
+      max-width: 100%
+    }
+    @media (max-width: 768px) {
+      .sobre-imagem {
+        position: static;
+        top: auto;
+        transform: none;
+      }
+      .sobre-container {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      .sobre-imagem {
+        flex: none;
+        width: 100%;
+        max-width: 400px;
+      }
+    }
+    .sobre-imagem img {
       width: 100%;
-      height: 150px;
-      object-fit: cover;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
+      display: block;
+      margin: 0; 
     }
-    h2 {
-      text-align: center;
-      padding-top: 40px;
+    .sobre-texto {
+      flex: 1;
+      max-width: 1000px;
+    }    
+    .sobre-texto h2 {
+      font-size: 32px;
+      margin: 0 0 20px 0; 
     }
-    .section {
+    .sobre-texto p {
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+    .sobre-texto h3 {
+      margin-top: 30px;
+      font-size: 22px;
+    }
+    .sobre-texto ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+    .sobre-texto ul li {
+      margin-bottom: 10px;
+    }
+    /* Separador elegante entre secções */
+    .separador {
+      height: 2px;
+      width: 80%;
+      margin: 60px auto;
+      background: linear-gradient(to right, transparent, #555, transparent);
+      border-radius: 2px;
+    }
+
+    /* ----------- ESTILOS DO MODAL ----------- */
+    .modal {
+      display: none; /* escondido por padrão */
+      position: fixed;
+      z-index: 100000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.8);
       padding: 40px 20px;
-      width: 100%;
+      box-sizing: border-box;
+    }
+    .modal-content {
+      background-color: #fefaf6;
       margin: auto;
-    }
-    footer {
-      text-align: center;
       padding: 20px;
-      border-top: 1px solid #333;
+      border-radius: 12px;
+      max-width: 1000px;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 0 25px rgba(0,0,0,0.7);
+      position: relative;
     }
+    .modal-close {
+      position: absolute;
+      top: 10px;
+      right: 15px;
+      font-size: 30px;
+      font-weight: bold;
+      color: #333;
+      cursor: pointer;
+      user-select: none;
+      transition: color 0.2s ease;
+    }
+    .modal-close:hover {
+      color: #f0a500;
+    }
+    /* galerias dentro do modal */
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 16px;
+      padding: 20px 0;
+    }
+    .gallery img {
+      width: 300px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.4);
+      cursor: pointer;
+    }
+
+    /* FORM modal: mantém estilo */
     form {
       display: flex;
       flex-direction: column;
@@ -75,257 +223,46 @@
       border: none;
       cursor: pointer;
     }
-    .nav-item img {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 4px;
-    margin-bottom: 5px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.5);
-  }
- .topbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 80px;
-  background-color: #fdf6ee;
-  border-bottom: 1px solid #333;
-  z-index: 1000;
-}
 
-
-
-.logo-container {
-  position: absolute;
-  left: 20px;
-  top: 50%;
-  transform: translateY(-50%);
-}
-  
-/* Logo */
-.logo {
-  height: 50px;
-  object-fit: contain;
-}
-.nav-links {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  display: flex;
-  gap: 24px;
-  align-items: center;
-}
-.nav-links a {
-  color: #333;
-  text-decoration: none;
-  font-size: 15px;
-  transition: 0.3s ease;
-}
-.nav-links a:hover {
-  color: #f0a500;
-}
-
-.sobre-section {
-  padding: 80px 20px;
-  background-color: #fefaf6;
-  color: #1a1a1a;
-}
-.sobre-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 60px;
-  max-width: 1600px;
-  margin: 0 auto;
-  flex-wrap: nowrap;
-  min-height: 120vh; /* importante: altura mínima da secção */
-}
-  .sticky-wrapper {
-  position: relative;
-  flex: 0 0 400px;
-  align-self: stretch;
-}
-.sobre-imagem {
-  flex: 0 0 400px; 
-  position: sticky;
-  top: 200px;
-  height: fit-content;
-  display: block;
-  max-width: 100%
-}
-@media (max-width: 768px) {
-  .sobre-imagem {
-    position: static;
-    top: auto;
-    transform: none;
-  }
-}
-.sobre-imagem img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.05);
-  display: block;
-  margin: 0; 
-}
-
-.sobre-texto {
-  flex: 1;
-  max-width: 1000px;
-}    
-.sobre-texto h2 {
-  font-size: 32px;
-  margin: 0 0 20px 0; 
-}
-
-.sobre-texto p {
-  line-height: 1.6;
-  margin-bottom: 20px;
-}
-
-.sobre-texto h3 {
-  margin-top: 30px;
-  font-size: 22px;
-}
-
-.sobre-texto ul {
-  list-style-type: disc;
-  padding-left: 20px;
-}
-
-.sobre-texto ul li {
-  margin-bottom: 10px;
-}
-
-/* Separador elegante entre secções */
-.separador {
-  height: 2px;
-  width: 80%;
-  margin: 60px auto;
-  background: linear-gradient(to right, transparent, #555, transparent);
-  border-radius: 2px;
-}
-
-/* Espaço no topo do conteúdo para não ser tapado pela topbar */
-body {
-  margin: 0;
-  padding-top: 100px;
-  background: #fefaf6;
-  color: #1a1a1a;
-  font-family: sans-serif;
-}
-  @media (max-width: 768px) {
-    .sobre-container {
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-    }
-
-    .sobre-imagem {
-      flex: none;
-      width: 100%;
-      max-width: 400px;
-    }
-
-    .sobre-texto {
-      max-width: 100%;
-    }
   </style>
 </head>
 <body>
+
   <header class="topbar">
-  <div class="logo-container">
-    <img src="logo.PNG" alt="Ink Stuart Logo" class="logo">
-  </div>
-  <nav class="nav-links">
-    <a href="#realismo">Retratos</a>
-    <a href="#retratos">Realismo</a>
-    <a href="#lettering">Lettering</a>
-    <a href="#fineline">Fineline/Outras</a>
-    <a href="#cicatrizadas">Cicatrizadas</a>
-    <a href="#detalhes">Pequenos detalhes</a>
-    <a href="#sobre">Sobre</a>
-    </nav>
-  </div>
-</header>
-
-<style>
-  header {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 40px;
-    background-color: #000; /* mantém fundo preto */
-  }
-  .logo img {
-    max-height: 150px;
-    width: auto;
-  }
-  .nav-links {
-    display: flex;
-    gap: 30px;
-  }
-  .nav-item {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #fff;
-    font-family: 'MinhaFonte', sans-serif;
-    font-size: 14px;
-    cursor: pointer;
-  }
-  .nav-item a {
-    color: #fff;
-    text-decoration: none;
-    font-weight: 600;
-  }
-  .nav-item p {
-    margin: 4px 0 0 0;
-    font-size: 11px;
-    color: #bbb;
-    max-width: 120px;
-    text-align: center;
-  }
-  .nav-item a:hover {
-    color: #f0a500; /* um destaque laranja, por exemplo */
-  }
-
-  /* Responsivo básico */
-  @media (max-width: 800px) {
-    header {
-      flex-direction: column;
-      gap: 10px;
-      padding: 10px 20px;
-    }
-    .nav-links {
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-  }
-</style>
-
-  <section class="section" id="introducao">
-  <h2>Introdução</h2>
-</section>
-
-  
-  <div class="separador"></div>
-  
- <section class="section sobre-section" id="sobre">
-  <div class="sobre-container">
-    
-    <div class="sticky-wrapper">
-      <div class="sobre-imagem">
-        <img src="tatuar1.jpg" alt="Rodrigo a tatuar">
-      </div>
+    <div class="logo-container">
+      <img src="logo.PNG" alt="Ink Stuart Logo" class="logo">
     </div>
+    <nav class="nav-links">
+      <!-- Links que abrem modais para todas exceto Introdução e Sobre -->
+      <a href="#introducao" class="no-modal">Introdução</a>
+      <a href="#sobre" class="no-modal">Sobre</a>
+      <a href="#realismo" class="modal-link">Retratos</a>
+      <a href="#retratos" class="modal-link">Realismo</a>
+      <a href="#lettering" class="modal-link">Lettering</a>
+      <a href="#fineline" class="modal-link">Fineline/Outras</a>
+      <a href="#cicatrizadas" class="modal-link">Cicatrizadas</a>
+      <a href="#detalhes" class="modal-link">Pequenos detalhes</a>
+      <a href="#contacto" class="modal-link">Contacto e Orçamento</a>
+    </nav>
+  </header>
 
-    <div class="sobre-texto">
-      <h2>Sobre</h2>
-      <p>
+  <!-- Introdução e Sobre sempre visíveis, fora do modal -->
+  <section class="section" id="introducao">
+    <h2>Introdução</h2>
+  </section>
+
+  <div class="separador"></div>
+
+  <section class="section sobre-section" id="sobre">
+    <div class="sobre-container">
+      <div class="sticky-wrapper">
+        <div class="sobre-imagem">
+          <img src="tatuar1.jpg" alt="Rodrigo a tatuar">
+        </div>
+      </div>
+      <div class="sobre-texto">
+        <h2>Sobre</h2>
+<p>
        Nascido em 1997 em Viana do Castelo. Cresci rodeado por referências criativas — com parte da família ligada às artes — e desde cedo desenvolvi um fascínio pela tatuagem, mesmo sendo algo pouco aceite no meio familiar. 
       </p>
       
@@ -371,11 +308,15 @@ body {
 
     </div>
   </div>
-</section>
-  
-<div class="separador"></div>
-  
-  <section class="section" id="realismo">
+ </section>
+
+  <div class="separador"></div>
+
+  <!-- MODAL ÚNICO para todas as outras seções -->
+  <div id="modal" class="modal" aria-hidden="true" role="dialog" aria-modal="true">
+    <div class="modal-content" role="document">
+      <span class="modal-close" aria-label="Fechar modal">&times;</span>
+<section class="section" id="realismo">
     <h2>Retratos</h2>
      <div class="gallery">
     <img src="portfolio/retratos1.jpeg" alt="Tatuagem Retratos 1">
@@ -388,28 +329,9 @@ body {
     <img src="portfolio/retratos8.jpeg" alt="Tatuagem Retratos 8">
     <img src="portfolio/retratos9.jpeg" alt="Tatuagem Retratos 9">
   </div>
-    <style>
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    padding: 20px 0;
-  }
-
-  .gallery img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  }
-</style>
   </section>
-  
-<div class="separador"></div>
-  
-  <section class="section" id="retratos">
+
+<section class="section" id="retratos">
     <h2>Realismo</h2>
      <div class="gallery">
     <img src="portfolio/realismo1.jpeg" alt="Tatuagem Realismo 1">
@@ -422,27 +344,8 @@ body {
     <img src="portfolio/realismo8.jpeg" alt="Tatuagem Realismo 8">
     <img src="portfolio/realismo9.jpeg" alt="Tatuagem Realismo 9">
   </div>
-    <style>
-  .gallery {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 16px;
-    padding: 20px 0;
-  }
-
-  .gallery img {
-    width: 300px;
-    height: 300px;
-    object-fit: cover;
-    border-radius: 12px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.4);
-  }
-</style>
   </section>
-  
-<div class="separador"></div>
-  
+
   <section class="section" id="lettering">
     <h2>Lettering</h2>
      <div class="gallery">
@@ -451,10 +354,6 @@ body {
     <img src="portfolio/lettering3.jpeg" alt="Tatuagem Lettering 3">
   </div>
   </section>
-  
-<div class="separador"></div>
-  
-  <section class="section" id="fineline">
     <h2>Fineline / Outras</h2>
      <div class="gallery">
     <img src="portfolio/finelineoutras1.jpeg" alt="Tatuagem Outras 1">
@@ -464,9 +363,6 @@ body {
     <!-- mais imagens -->
   </div>
   </section>
-  
-<div class="separador"></div>
-  
   <section class="section" id="cicatrizadas">
     <h2>Cicatrizadas</h2>
     <div class="gallery">
@@ -474,9 +370,6 @@ body {
     <img src="portfolio/cicatrizada2.jpeg" alt="Tatuagem Cicatrizada 2">
   </div>
   </section>
-  
-<div class="separador"></div>
-  
   <section class="section" id="detalhes">
     <h2>Pequenos Detalhes</h2>
      <div class="gallery">
@@ -488,9 +381,6 @@ body {
     <img src="portfolio/detalhes6.jpeg" alt="Detalhe 6">
   </div>
   </section>
-  
-<div class="separador"></div>
-  
   <section class="section" id="contacto">
     <h2>Contacto e Orçamento</h2>
     <form action="https://formsubmit.co/rodrigostuart8@gmail.com" method="POST">
@@ -502,11 +392,15 @@ body {
     </form>
     <p>Instagram: <a href="https://instagram.com/ink.stuart" target="_blank">@ink.stuart</a></p>
   </section>
-  
-<div class="separador"></div>
-  
+
+
+
+
+      <div id="modal-body
+
   <footer>
     &copy; 2025 Ink Stuart. Todos os direitos reservados.
   </footer>
 </body>
 </html>
+
