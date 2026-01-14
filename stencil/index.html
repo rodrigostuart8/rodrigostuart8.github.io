@@ -1,8 +1,15 @@
 <!DOCTYPE html>
-<html><head><title>InkStuart Stencil Privado</title>
+<html>
+<head>
+<title>InkStuart Stencil Privado</title>
 <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.9.0/crypto-js.js"></script>
-<style>/* o teu style igual */</style>
-</head><body>/* HTML igual */
+<style>body{font-family:Arial,sans-serif;text-align:center;padding:100px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;}h1{font-size:36px;margin-bottom:20px;}input{font-size:24px;padding:20px;width:450px;border:3px solid white;border-radius:15px;margin:20px 0;background:rgba(255,255,255,0.1);color:white;}input::placeholder{color:#ddd;}button{font-size:24px;padding:20px 50px;background:#ff6b6b;color:white;border:none;border-radius:15px;cursor:pointer;font-weight:bold;transition:background 0.3s;}button:hover{background:#ff5252;}#erro{color:#ffcccb;font-size:22px;margin-top:20px;background:rgba(255,0,0,0.2);padding:15px;border-radius:10px;display:none;}</style>
+</head>
+<h1>🎨 INK STUART Stencils Privado</h1>
+<p style="font-size:22px;">Só para ti, Rodrigo. Escreve a password secreta:</p>
+<input type="password" id="pass" placeholder="ex: inkstuart2026">
+<button onclick="verifica()">🔓 Abrir Gerador</button>
+<div id="erro">❌ Password errada! Tenta de novo, devagarinho.</div>
 <script>
 function verifica(){
   var pw = document.getElementById('pass').value.trim();
