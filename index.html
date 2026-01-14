@@ -238,29 +238,28 @@ body {
     .sobre-texto {
       max-width: 100%;
     }
- /* Localização - estilo premium, centralizado como o resto do site */
+/* Localização - centralizada e botão com vida */
 .location-section {
-  padding: 60px 20px;
-  background-color: #0e0e0e; /* fundo preto elegante */
+  background-color: #0e0e0e; /* fundo preto premium */
   color: #e8e3d8;
   text-align: center;
-
-  max-width: 1600px; /* igual às outras secções */
-  margin: 0 auto; /* centraliza horizontalmente */
-  box-sizing: border-box;
+  padding: 80px 20px;
+  border-radius: 12px; /* leve arredondamento para “premium feel” */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.4); /* profundidade */
 }
 
 .location-section h2 {
   font-family: "MinhaFonte", serif;
-  font-size: 2.8rem;
+  font-size: 3rem;
   margin-bottom: 2rem;
+  color: #fff;
 }
 
 .location-content {
   display: flex;
   flex-direction: column;
-  align-items: center; /* centraliza o conteúdo */
-  gap: 6px; /* espaçamento entre linhas */
+  align-items: center;
+  gap: 8px;
 }
 
 .location-content p {
@@ -271,33 +270,56 @@ body {
 }
 
 .location-content .studio-name {
-  font-weight: 600;
-  font-size: 1.1rem;
-  color: #e8e3d8;
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #fff;
 }
 
 .location-content .by-appointment {
   font-size: 0.9rem;
   opacity: 0.85;
-  margin-bottom: 1.8rem;
+  margin-bottom: 2rem;
 }
 
+/* Botão com vida */
 .maps-button {
   display: inline-block;
-  padding: 0.9rem 2.4rem;
-  border: 1px solid #e8e3d8;
+  padding: 0.9rem 2.8rem;
+  border: 2px solid #e8e3d8;
   color: #e8e3d8;
   text-decoration: none;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
   letter-spacing: 0.15em;
   text-transform: uppercase;
+  border-radius: 30px;
   transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.maps-button::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #e8e3d8;
+  transition: all 0.3s ease;
+  z-index: 0;
+}
+
+.maps-button:hover::after {
+  left: 0;
 }
 
 .maps-button:hover {
-  background-color: #e8e3d8;
   color: #0e0e0e;
+  border-color: #e8e3d8;
+  z-index: 1;
 }
+
 
   </style>
 </head>
