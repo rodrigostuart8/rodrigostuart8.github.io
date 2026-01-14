@@ -12,11 +12,9 @@
 <script>
 function verifica(){
   var pw = document.getElementById('pass').value.trim();
-  if(!pw){alert('Escreve a password!');return;}
+  if(!pw){alert('Escreve password!');return;}
   var hash = CryptoJS.SHA1(pw).toString();
-  var paginaSecreta = hash + '/gerador.html';
-  document.getElementById('erro').style.display='none';
-  fetch('./'+paginaSecreta,{method:'HEAD'}).then(r=>{if(r.ok){window.location='./'+paginaSecreta;}else{document.getElementById('erro').style.display='block';}}).catch(()=>{document.getElementById('erro').style.display='block';});
+  window.location = 'cf5bb70ff8c5d81e46c66acf17ad3c2d10eee8ef/gerador.html'; // DIRETO!
 }
 document.getElementById('pass').focus().addEventListener('keypress',e=>{if(e.key==='Enter')verifica();});
 </script>
