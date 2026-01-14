@@ -3,8 +3,63 @@
 <head>
 <title>Gerador de Stencil Privado AI</title>
 <script src="https://cdn.jsdelivr.net/npm/crypto-js@4.9.0/crypto-js.js"></script>
-<style>body{font-family:Arial,sans-serif;text-align:center;padding:100px;background:linear-gradient(135deg,#667eea 0%,#764ba2 100%);color:white;}h1{font-size:36px;margin-bottom:20px;}input{font-size:24px;padding:20px;width:450px;border:3px solid white;border-radius:15px;margin:20px 0;background:rgba(255,255,255,0.1);color:white;}input::placeholder{color:#ddd;}button{font-size:24px;padding:20px 50px;background:#ff6b6b;color:white;border:none;border-radius:15px;cursor:pointer;font-weight:bold;transition:background 0.3s;}button:hover{background:#ff5252;}#erro{color:#ffcccb;font-size:22px;margin-top:20px;background:rgba(255,0,0,0.2);padding:15px;border-radius:10px;display:none;}</style>
+<style>
+body{
+  font-family:Arial,sans-serif;
+  text-align:center;
+  padding:100px;
+  background:#fefaf6;
+  color:#111;
+}
+
+h1{
+  font-size:36px;
+  margin-bottom:20px;
+}
+
+input{
+  font-size:24px;
+  padding:20px;
+  width:450px;
+  border:3px solid #111;
+  border-radius:15px;
+  margin:20px 0;
+  background:rgba(0,0,0,0.05);
+  color:#111;
+}
+
+input::placeholder{
+  color:#666;
+}
+
+button{
+  font-size:24px;
+  padding:20px 50px;
+  background:#111;
+  color:#fefaf6;
+  border:none;
+  border-radius:15px;
+  cursor:pointer;
+  font-weight:bold;
+  transition:opacity 0.3s;
+}
+
+button:hover{
+  opacity:0.85;
+}
+
+#erro{
+  color:#8b0000;
+  font-size:22px;
+  margin-top:20px;
+  background:rgba(139,0,0,0.1);
+  padding:15px;
+  border-radius:10px;
+  display:none;
+}
+</style>
 </head>
+<body>
 <h1>🎨 Gerador de Stencil Privado AI</h1>
 <p style="font-size:22px;">Modelo criado por Rodrigo Stuart | Escreve a password secreta:</p>
 <input type="password" id="pass" placeholder="secreta">
