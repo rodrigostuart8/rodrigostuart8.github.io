@@ -238,12 +238,16 @@ body {
     .sobre-texto {
       max-width: 100%;
     }
-    /* Localização - estilo premium */
+ /* Localização - estilo premium, centralizado como o resto do site */
 .location-section {
   padding: 60px 20px;
-  background-color: #0e0e0e; /* preto elegante */
-  text-align: center;
+  background-color: #0e0e0e; /* fundo preto elegante */
   color: #e8e3d8;
+  text-align: center;
+
+  max-width: 1600px; /* igual às outras secções */
+  margin: 0 auto; /* centraliza horizontalmente */
+  box-sizing: border-box;
 }
 
 .location-section h2 {
@@ -252,10 +256,17 @@ body {
   margin-bottom: 2rem;
 }
 
+.location-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* centraliza o conteúdo */
+  gap: 6px; /* espaçamento entre linhas */
+}
+
 .location-content p {
   font-family: "MinhaFonte", sans-serif;
   font-size: 1rem;
-  margin: 5px 0;
+  margin: 0;
   color: #bdb8ae;
 }
 
@@ -596,7 +607,7 @@ body {
       <button type="submit">Enviar pedido</button>
     </form>
     <p>Instagram: <a href="https://instagram.com/ink.stuart" target="_blank">@ink.stuart</a></p>
-    <p>Instagram: <a href="https://instagram.com/ink.stuart" target="_blank">@ink.stuart</a></p>
+    
   </section>
 
 <section class="location-section">
