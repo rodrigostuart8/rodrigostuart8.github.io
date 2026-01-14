@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html><head><title>StencilAI Gerador</title>
+<style>body{font-family:Arial;background:#000;color:#fff;text-align:center;padding:50px;}
+#drop{background:#333;border:3px dashed #fff;padding:100px;margin:50px;border-radius:20px;cursor:pointer;}
+#preview img{max-width:100%;max-height:500px;border-radius:10px;}
+button{font-size:24px;padding:15px 30px;background:#4caf50;color:white;border:none;border-radius:10px;cursor:pointer;margin:10px;}
+</style></head>
+<body>
+<h1>🚀 StencilAI v24 - Gerador Automático</h1>
+<p>Arraste imagem JPG/PNG aqui (Black&Grey/Realista → Stencil A4 pronto!)</p>
+<div id="drop" onclick="document.getElementById('file').click()">📁 Arraste foto ou clica aqui</div>
+<input type="file" id="file" accept="image/*" style="display:none;">
+<div id="preview"></div>
+<button onclick="gerar()" id="btn" style="display:none;">🎨 Gerar Stencil</button>
+<a id="download" style="display:none;"><button>💾 Download PNG A4</button></a>
+<script>
+const drop = document.getElementById('drop');
+const file = document.getElementById('file');
+let imgData;
+drop.ondragover = e=>e.preventDefault();
+drop.ondrop = e=>{e.preventDefault();loadFile(e.dataTransfer.files[0]);};
+file.onchange = e=>loadFile(e.target.files[0]);
+function loadFile(f){
+  if(!f.type.startsWith('image/'))return alert('Só imagens!');
+  const reader = new FileReader();
+  reader.onload = e=>{
+    imgData = e.target.result;
+    const img = document.createElement('img');
+    img.src = imgData;
+    document.getElementById('preview').innerHTML = '<h2>Preview:</h2>'+img.outerHTML;
+    document.getElementById('btn').style.display='inline';
+  };
+  reader.readAsDataURL(f);
+}
+function gerar(){
+  document.getElementById('btn').innerHTML='⏳ Gerando... (demo)';
+  setTimeout(()=>{
+    const canvas = document.createElement('canvas');
+    canvas.width=2480;canvas.height=3508; // A4 300DPI
+    const ctx = canvas.getContext('2d');
+    const img = new Image();img.src=imgData;
+    img.onload=()=>{
+      ctx.drawImage(img,0,0,2480,3508);
+      // SIMULAIA STENCIL: edge detect + lines grossas
+      ctx.filter='grayscale(100%) contrast(200%) brightness(20%)';
+      ctx.drawImage(img,0,0,2480,3508);
+      const link = document.getElementById('download');
+      link.href=canvas.toDataURL();
+      link.download='stencil_a4.png';
+      link.style.display='inline';
+      document.getElementById('btn').innerHTML='✅ Gerado!';
+    };
+  },2000);
+}
+</script>
+</body></html>
