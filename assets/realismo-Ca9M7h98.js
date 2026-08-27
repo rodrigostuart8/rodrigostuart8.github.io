@@ -1,0 +1,1 @@
+import{o as e}from"./useStore-BNxtYx_t.js";import{u as t}from"./index-CL_t1zUQ.js";var n=e(),r=()=>(0,n.jsx)(t,{"data-tsd-source":`/src/routes/realismo.tsx:4:20`});export{r as component};

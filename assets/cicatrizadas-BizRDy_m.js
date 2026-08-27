@@ -1,0 +1,1 @@
+import{o as e}from"./useStore-BNxtYx_t.js";import{t}from"./CategoryPage-BIZfQOB9.js";var n=e(),r=()=>(0,n.jsx)(t,{slug:`cicatrizadas`,"data-tsd-source":`/src/routes/cicatrizadas.tsx:18:20`});export{r as component};
