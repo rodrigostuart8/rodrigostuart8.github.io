@@ -1,13 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>http://localhost:8799/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
-  <url><loc>http://localhost:8799/retratos</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>http://localhost:8799/realismo</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>http://localhost:8799/realismo/animais</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>http://localhost:8799/lettering</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>http://localhost:8799/fineline-outras</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>http://localhost:8799/cicatrizadas</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>http://localhost:8799/pequenos-detalhes</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>http://localhost:8799/momentos</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
-  <url><loc>http://localhost:8799/sobre</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://www.inkstuart.com/</loc></url>
+  <url><loc>https://www.inkstuart.com/sobre</loc></url>
+  <url><loc>https://www.inkstuart.com/retratos</loc></url>
+  <url><loc>https://www.inkstuart.com/realismo</loc></url>
+  <url><loc>https://www.inkstuart.com/realismo/animais</loc></url>
+  <url><loc>https://www.inkstuart.com/lettering</loc></url>
+  <url><loc>https://www.inkstuart.com/fineline-outras</loc></url>
+  <url><loc>https://www.inkstuart.com/cicatrizadas</loc></url>
+  <url><loc>https://www.inkstuart.com/pequenos-detalhes</loc></url>
+  <url><loc>https://www.inkstuart.com/momentos</loc></url>
+  <url><loc>https://www.inkstuart.com/privacidade</loc></url>
+  <url><loc>https://www.inkstuart.com/cookies</loc></url>
+  <url><loc>https://www.inkstuart.com/termos</loc></url>
 </urlset>
