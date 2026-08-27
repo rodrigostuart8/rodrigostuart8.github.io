@@ -1,0 +1,1 @@
+import{o as e}from"./useStore-B9WcefOa.js";import{t}from"./CategoryPage-CIyr7wft.js";var n=e(),r=()=>(0,n.jsx)(t,{slug:`fineline-outras`});export{r as component};
