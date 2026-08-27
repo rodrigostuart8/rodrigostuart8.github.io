@@ -1,0 +1,1 @@
+import{t as e}from"./jsx-runtime-Cltr0gcK.js";import{t}from"./CategoryPage-D5NdBm33.js";var n=e(),r=()=>(0,n.jsx)(t,{slug:`fineline-outras`});export{r as component};
